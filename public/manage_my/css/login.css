@@ -1,0 +1,10 @@
+body {
+    background-color: #24113c;
+}
+.container{
+    margin-top: 200px;
+}
+
+.login-modules .panel-heading {
+    background: #337ab7
+}
