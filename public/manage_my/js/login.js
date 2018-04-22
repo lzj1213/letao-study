@@ -5,8 +5,18 @@ $(function () {
             type: "post",
             url: "/employee/employeeLogin",
             data: $('form').serialize(),
-            success: function (backDate) {
+            success: function (backData) {
                 console.log(backData);
+                if (backData.success == true) {
+                    window.location = "./index.html"
+                }else{
+                    var validator = $("form").data('bootstrapValidator');
+                    if(backData.error==1000){
+                        validator.updateStatus('username', 'INVALID', 'callback')
+                    }else if(backData.error==1001){
+                        validator.updateStatus('password', 'INVALID', 'callback')
+                    }
+                }
             },
 
 
@@ -34,10 +44,8 @@ $(function () {
                         max: 15,
                         message: '用户名长度必须在4到15之间'
                     },
-                    //正则校验
-                    regexp: {
-                        regexp: /^[a-zA-Z0-9_\.]+$/,
-                        message: '用户名由数字字母下划线和.组成'
+                    callback:{
+                        message:'用户名不存在'
                     }
                 }
             },
@@ -47,7 +55,9 @@ $(function () {
                     notEmpty: {
                         message: '请输入密码'
                     },
-
+                    callback: {
+                        message: '密码错误'
+                    }
                 }
             },
         }
