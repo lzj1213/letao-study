@@ -21,6 +21,9 @@ $(function () {
 
 
         })
+         //进度条
+         NProgress.start();
+         NProgress.done();
     })
     //初始化表单验证
     $('form').bootstrapValidator({
@@ -63,4 +66,5 @@ $(function () {
         }
 
     });
+
 })
