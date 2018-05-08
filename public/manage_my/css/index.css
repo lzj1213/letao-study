@@ -35,9 +35,6 @@ body {
     border-radius: 50%
 }
 
-.lt_aside .user span {}
-
-.lt_aside .content {}
 
 .lt_aside .content li {
     /* text-align: center */
@@ -70,7 +67,6 @@ body {
     line-height: 30px;
 }
 
-.lt_aside .content li a span {}
 
 .lt_main {
     height: 100%;
@@ -94,5 +90,4 @@ body {
 .lt_main .content {
     padding: 30px 20px 0;
 }
-
 
