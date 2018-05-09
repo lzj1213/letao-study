@@ -35,7 +35,6 @@ body {
     border-radius: 50%
 }
 
-
 .lt_aside .content li {
     /* text-align: center */
     padding-left: 30px;
@@ -67,12 +66,15 @@ body {
     line-height: 30px;
 }
 
-
 .lt_main {
     height: 100%;
     background-color: hotpink;
     /* 被挡住 加margin */
     margin-left: 180px;
+}
+
+.lt_main.full_screen{
+    margin-left: 0;
 }
 
 .lt_main .header {
@@ -90,4 +92,3 @@ body {
 .lt_main .content {
     padding: 30px 20px 0;
 }
-

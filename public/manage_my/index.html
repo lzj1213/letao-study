@@ -33,8 +33,12 @@
                     <a href="javascript:void(0)">
                         <span class="glyphicon glyphicon-list"></span>用户管理</a>
                     <ul>
-                        <li><a href="javascript:void(0)">一级分类</a></li>
-                        <li><a href="javascript:void(0)">二级分类</a></li>
+                        <li>
+                            <a href="javascript:void(0)">一级分类</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">二级分类</a>
+                        </li>
                     </ul>
                 </li>
                 <li>
@@ -47,7 +51,7 @@
     <!-- 主体 -->
     <div class="lt_main">
         <div class="header">
-            <a href="javascript:void(0)" class="glyphicon glyphicon-align-justify pull-left" ></a>
+            <a href="javascript:void(0)" class="glyphicon glyphicon-align-justify pull-left"></a>
             <a href="javascript:void(0)" class="glyphicon glyphicon-log-out pull-right"></a>
         </div>
         <div class="content">
@@ -57,10 +61,36 @@
                 </li>
                 <li class="active">用户管理</li>
             </ol>
-           
-         
+
+
         </div>
     </div>
+    <!-- 模态框 -->
+
+    <div class="modal fade modal-comfirm" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">温馨提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="text-danger text-center"><span class="glyphicon glyphicon-info-sign"></span> 你确定要退出吗?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">确定</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+
 </body>
 
 </html>
