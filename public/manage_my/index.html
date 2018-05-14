@@ -95,7 +95,21 @@
 
 </html>
 <script src="./lib/jquery/jquery.min.js"></script>
+<script>
+    //  判断是否登录
+        $.ajax({
+            url: '/employee/checkRootLogin',
+            success: function (backData) {
+                if (backData.error == 400) {
+                    window.location.href = './login.html'
+                }else{
+                    //转义符号是关键
+                    // $('body').append('<script src="./js/index.js"><\/script>');
+                    $.getScript('./js/index.js')    
+                }
+            }
+        })  
+</script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="./js/index.js"></script>
 <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
 <script src="https://img.hcharts.cn/highcharts/modules/data.js"></script>

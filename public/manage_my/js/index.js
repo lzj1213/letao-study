@@ -1,5 +1,6 @@
 $(
     function () {
+        
         $('.lt_aside .content li').click(function () {
             $(this).toggleClass('now')
         });
@@ -13,9 +14,15 @@ $(
         })
         //隐藏模态框
         $('.modal-comfirm .btn-primary').click(function () {
+           
             $('#myModal').modal('hide');
-            window.location.href="./login.html"
+            $.ajax({
+                url: '/employee/employeeLogout',
+                success:function (backData) {
+                    window.location.href="./login.html"
+                }
+            })
         })    
-            
+        
       }
 )
