@@ -1,10 +1,108 @@
-html *{
+html * {
     padding: 0;
     margin: 0;
 }
-ol,ul{
+
+ol,
+ul {
     list-style: none;
 }
-a:hover{
+
+a:hover {
     text-decoration: none
+}
+
+/* 高度100% */
+
+html,
+body {
+    height: 100%;
+}
+
+.lt_aside {
+    width: 180px;
+    background-color: #367fa9;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.lt_aside .header {
+    height: 50px;
+    text-align: center;
+}
+
+.lt_aside .header a {
+    color: #fff;
+    line-height: 50px;
+}
+
+.lt_aside .user {
+    background-color: bisque;
+    padding: 30px 20px;
+}
+
+.lt_aside .user img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%
+}
+
+.lt_aside .content li {
+    /* text-align: center */
+    padding-left: 30px;
+    border: 4px solid transparent;
+}
+
+.lt_aside .content ul>li.now {
+    border-left-color: yellowgreen;
+    background-color: #000;
+}
+
+.lt_aside .content ul li.now a {
+    color: white;
+}
+
+.lt_aside .content li a {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 40px;
+}
+
+.lt_aside .content li ul {
+    font-size: 12px;
+    /* line-height: 30px; */
+}
+
+.lt_aside .content li ul a {
+    color: #ccc;
+    line-height: 30px;
+}
+
+.lt_main {
+    height: 100%;
+    background-color: hotpink;
+    /* 被挡住 加margin */
+    margin-left: 180px;
+}
+
+.lt_main.full_screen {
+    margin-left: 0;
+}
+
+.lt_main .header {
+    background-color: #3c8dbc;
+    height: 50px;
+    padding: 0 20px;
+}
+
+.lt_main .header a {
+    font-size: 16px;
+    color: white;
+    line-height: 50px;
+}
+
+.lt_main .content {
+    padding: 30px 20px 0;
 }
