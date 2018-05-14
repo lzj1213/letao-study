@@ -82,7 +82,7 @@ body {
 
 .lt_main {
     height: 100%;
-    background-color: hotpink;
+    /* background-color: ; */
     /* 被挡住 加margin */
     margin-left: 180px;
 }
