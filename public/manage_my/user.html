@@ -75,6 +75,7 @@
 
                 </tbody>
             </table>
+            <ul id="pagintor"></div>
 
         </div>
     </div>
@@ -113,7 +114,7 @@
 <script type='text/html' id='user'>
     {{each rows}}
     <tr>
-        <th scope="row">{{$index+1}}</th>
+        <th scope="row">{{(page-1)*size+$index+1}}</th>
         <td>{{$value.username}}</td>
         <td>{{$value.mobile}}</td>
         <td>{{if $value.isDelete==0}}正常 {{else}} 已禁用 {{/if}}
@@ -130,3 +131,4 @@
     {{/each}}
 </script>
 <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>

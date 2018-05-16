@@ -8,7 +8,7 @@ $(function () {
             } else {
                 //转义符号是关键
                 // $('body').append('<script src="./js/index.js"><\/script>');
-                $.getScript('./js/index.js')
+                // $.getScript('./js/base.js')
             }
         }
     })
