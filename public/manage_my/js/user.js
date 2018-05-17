@@ -1,6 +1,7 @@
 $(function () {
-
-    (function getPageData(pageNum, myPageSize) {
+    var pageNum=1;
+    var myPageSize=5;
+    function getPageData() {
         //获取用户数据
         $.ajax({
             url: '/user/queryUser',
@@ -21,12 +22,37 @@ $(function () {
                         //为按钮绑定点击事件 page:当前点击的按钮值
                         // getPageData(page, pageSize)
                         pageNum=page
-                        getPageData(pageNum,5)
+                        getPageData()
                     }
                 });
             }
         })
-    })(1,5)
-    
+    }
+    getPageData();
+
+    //启用禁用按钮
+    $('tbody').on('click','button',function () {
+        var isDelete;
+        if($(this).html()=='启用'){
+            
+            isDelete=0
+        }else{
+            isDelete =1
+        }
+        $.ajax({
+            type:'post',
+            url:'/user/updateUser',
+            data:{
+                id: $(this).parent().attr('data-id'),
+                isDelete: isDelete
+            },
+            success:function (backData) {
+                if (backData.success){
+                    getPageData()
+                }
+               
+            }
+        })
+    })
    
 })

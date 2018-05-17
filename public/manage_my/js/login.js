@@ -8,7 +8,7 @@ $(function () {
             success: function (backData) {
                 console.log(backData);
                 if (backData.success == true) {
-                    window.location = "./index.html"
+                    window.location.href='./index.html'
                 }else{
                     var validator = $("form").data('bootstrapValidator');
                     if(backData.error==1000){

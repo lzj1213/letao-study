@@ -55,6 +55,13 @@ body {
     border: 4px solid transparent;
 }
 
+.lt_aside .content li a{
+    /* text-align: center */
+   display: block;
+   width: 100%;
+   height: 40px;
+}
+
 .lt_aside .content ul>li.now {
     border-left-color: yellowgreen;
     background-color: #000;

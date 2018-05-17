@@ -13,10 +13,11 @@ $(function () {
         }
     })
      
-    $('.lt_aside .content ul').children('li').click(function () {
-        console.log($(this)); 
-        $(this).toggleClass('now')
+    
+    $('.lt_aside .content ul').children('.category').click(function () {
+        $(this).siblings('ol').toggle(400)
     });
+  
     $('.lt_main .header a').first().click(function () {
         // console.log('1');
         $('.lt_aside').toggle()
