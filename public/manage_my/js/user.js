@@ -1,6 +1,6 @@
 $(function () {
     var pageNum=1;
-    var myPageSize=5;
+    var myPageSize=10;
     function getPageData() {
         //获取用户数据
         $.ajax({
@@ -34,7 +34,6 @@ $(function () {
     $('tbody').on('click','button',function () {
         var isDelete;
         if($(this).html()=='启用'){
-            
             isDelete=0
         }else{
             isDelete =1

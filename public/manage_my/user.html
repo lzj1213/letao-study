@@ -54,7 +54,7 @@
             <a href="javascript:void(0)" class="glyphicon glyphicon-align-justify pull-left"></a>
             <a href="javascript:void(0)" class="glyphicon glyphicon-log-out pull-right"></a>
         </div>
-        <div class="content">
+        <ul class="content">
             <ol class="breadcrumb">
                 <li>
                     <a href="index.html">管理系统</a>
@@ -75,7 +75,7 @@
 
                 </tbody>
             </table>
-            <ul id="pagintor"></div>
+            <ul id="pagintor"></ul>
 
         </div>
     </div>
@@ -114,7 +114,7 @@
 <script type='text/html' id='user'>
     {{each rows}}
     <tr>
-        <th scope="row">{{(page-1)*size+$index+1}}</th>
+        <td>{{(page-1)*size+$index+1}}</td>
         <td>{{$value.username}}</td>
         <td>{{$value.mobile}}</td>
         <td>{{if $value.isDelete==0}}正常 {{else}} 已禁用 {{/if}}
