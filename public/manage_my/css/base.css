@@ -117,3 +117,7 @@ body {
 .mb_30{
     margin-bottom: 30px;
 }
+#fileUpload{
+    position: absolute;
+    opacity: 1;
+}

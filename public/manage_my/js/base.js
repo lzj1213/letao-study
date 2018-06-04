@@ -7,7 +7,6 @@ $(function () {
                 window.location.href = './login.html'
             } else {
                 var pathName=window.location.pathname;
-                console.log(pathName);
                 // var jsName=pathName.replace(^my/)
                 //转义符号是关键
                 // $('body').append('<script src="./js/index.js"><\/script>');

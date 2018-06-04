@@ -1,7 +1,6 @@
 $(function () {
     var pageNum = 1;
     var myPageSize = 10;
-
     function getPageData() {
         $.ajax({
             url: '/category/queryTopCategoryPaging',
@@ -11,7 +10,6 @@ $(function () {
                 pageSize: myPageSize,
             },
             success: function (backData) {
-                console.log(backData);
                 $('tbody').html(template('first', backData));
                 $("#pagintor").bootstrapPaginator({
                     bootstrapMajorVersion: 3, //默认是2，如果是bootstrap3版本，这个参数必填
@@ -35,10 +33,9 @@ $(function () {
     });
     $('button.cancle').click(function () {
         $('#append').modal('hide')
-        
     })
-    // $('.modal-category button[type="submit"]').click(function () {
-        $('form').bootstrapValidator({
+    $('.modal-category button[type="submit"]').click(function () {
+        $('form#category').bootstrapValidator({
             feedbackIcons: {
                 valid: 'glyphicon glyphicon-ok',
                 invalid: 'glyphicon glyphicon-remove',
@@ -70,9 +67,66 @@ $(function () {
                 }
             })
         });
-    // })
+
+        
+    })
+    var id = 0;
+    $('tbody').on('click', '.edit', function () {
+        $('#edit').modal('show');
+        id = $(this).parent().attr('data-id');
+        console.log(id);
+    });
+    
+    $('form#edit').bootstrapValidator({
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        //3. 指定校验字段
+        fields: {
+            //校验用户名，对应name表单的name属性
+            modifiedName: {
+                validators: {
+                    //不能为空
+                    notEmpty: {
+                        message: '随便输个字吧'
+                    },
+                }
+            },
+            
+        }
+        
+    });
+    $('#edit button[type=submit]').click(function () {
+        if ($('form#edit').data("bootstrapValidator").isValid()) {
+                  $.ajax({
+                      type: 'post',
+                      url: '/category/addTopCategory',
+                      data: {
+                          id: id,
+                          categoryName: $('input[name="modifiedName"]').val(),
+                          isDelete: 0
+                      },
+                      success: function (backData) {
+                          console.log(backData);
+                          $('#edit').modal('hide');
+                          $('input[name="modifiedName"]').val('');
+                          getPageData()
+                      }
+                  })
+              }
+        })
+       
+       
+        
+       
+
+        
+        
+        
 
 
 
-
+    
 })
